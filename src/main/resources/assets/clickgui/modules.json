@@ -1175,6 +1175,81 @@
   ]
  },
  {
+  "cls": "RodMacro",
+  "name": "Rod Macro",
+  "category": "combat",
+  "enabled": false,
+  "noToggle": false,
+  "hidden": true,
+  "key": 0,
+  "lite": false,
+  "failed": null,
+  "settings": [
+   {
+    "t": "desc",
+    "name": "Bind it: each press throws your rod."
+   },
+   {
+    "t": "slider",
+    "name": "Min launch delay",
+    "prefix": "",
+    "suffix": "ms",
+    "value": 50.0,
+    "min": 0.0,
+    "max": 500.0,
+    "step": 10.0,
+    "options": null,
+    "labels": null
+   },
+   {
+    "t": "slider",
+    "name": "Max launch delay",
+    "prefix": "",
+    "suffix": "ms",
+    "value": 100.0,
+    "min": 0.0,
+    "max": 500.0,
+    "step": 10.0,
+    "options": null,
+    "labels": null
+   },
+   {
+    "t": "slider",
+    "name": "Min switchback delay",
+    "prefix": "",
+    "suffix": "ms",
+    "value": 200.0,
+    "min": 0.0,
+    "max": 1000.0,
+    "step": 10.0,
+    "options": null,
+    "labels": null
+   },
+   {
+    "t": "slider",
+    "name": "Max switchback delay",
+    "prefix": "",
+    "suffix": "ms",
+    "value": 400.0,
+    "min": 0.0,
+    "max": 1000.0,
+    "step": 10.0,
+    "options": null,
+    "labels": null
+   },
+   {
+    "t": "toggle",
+    "name": "Show fail message",
+    "value": false
+   },
+   {
+    "t": "toggle",
+    "name": "Infinite rod",
+    "value": false
+   }
+  ]
+ },
+ {
   "cls": "R484",
   "name": "Reach",
   "category": "combat",
@@ -4322,6 +4397,47 @@
     "t": "toggle",
     "name": "Ignore void",
     "value": true
+   }
+  ]
+ },
+ {
+  "cls": "AntiVoid",
+  "name": "AntiVoid",
+  "category": "player",
+  "enabled": false,
+  "noToggle": false,
+  "hidden": false,
+  "key": 0,
+  "lite": false,
+  "failed": null,
+  "settings": [
+   {
+    "t": "mode",
+    "name": "Mode",
+    "prefix": "",
+    "suffix": "",
+    "value": 0.0,
+    "min": 0.0,
+    "max": 2.0,
+    "step": 1.0,
+    "options": [
+     "Vanilla",
+     "NCP",
+     "Blink"
+    ],
+    "labels": null
+   },
+   {
+    "t": "slider",
+    "name": "Distance",
+    "prefix": "",
+    "suffix": "",
+    "value": 5.0,
+    "min": 1.0,
+    "max": 10.0,
+    "step": 1.0,
+    "options": null,
+    "labels": null
    }
   ]
  },

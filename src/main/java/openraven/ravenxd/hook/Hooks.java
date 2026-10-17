@@ -233,7 +233,7 @@ public final class Hooks {
         if ((m = on("WTap")) != null) m.onPreMotion(e);
         if ((m = on("BedAura")) != null) m.onPreMotion(e);
         if ((m = any("Tower")) != null) m.onPreMotionAlways(e);
-        String[] order = {"Scaffold", "NoSlow", "InvMove", "Bhop", "Long Jump", "Speed", "Fly", "Teleport", "Step", "Criticals", "High Jump", "AutoPlace", "Freecam", "NoFall", "Disabler",
+        String[] order = {"Scaffold", "NoSlow", "InvMove", "Bhop", "Long Jump", "Speed", "Fly", "Teleport", "Step", "Criticals", "High Jump", "AutoPlace", "Freecam", "NoFall", "AntiVoid", "Disabler",
                 "Speed Builders", "Bed Wars", "AntiCheat", "Duels Stats"};
         for (String name : order) {
             if ((m = on(name)) != null) m.onPreMotion(e);
@@ -588,6 +588,9 @@ public final class Hooks {
             return false;
         }
         if ((m = on("Teleport")) != null && !m.onSendPacket(packet)) {
+            return false;
+        }
+        if ((m = on("AntiVoid")) != null && !m.onSendPacket(packet)) {
             return false;
         }
         if ((m = on("Velocity")) != null && !m.onSendPacket(packet)) {
