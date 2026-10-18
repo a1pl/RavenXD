@@ -103,7 +103,7 @@ public class MotionBlurModule extends Module {
             if (!ours(group) || dead(group)) {
                 this.failed = true;
                 this.message("&cCouldn't load the shader, check the game log.");
-                return;
+                return; 
             }
         }
         List<Shader> list = shaders(group);
