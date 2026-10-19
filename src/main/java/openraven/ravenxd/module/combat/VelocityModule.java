@@ -4,7 +4,7 @@ package openraven.ravenxd.module.combat;
 //creds to miau minus
 import openraven.ravenxd.client.Friends;
 import openraven.ravenxd.client.BotCheck;
-import openraven.ravenxd.util.Rots;
+import openraven.ravenxd.util.RotationUtils;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityArmorStand;
@@ -508,7 +508,7 @@ public class VelocityModule extends Module {
         if (current != Mode.Airpush || this.rotateTarget == null || this.rotateTarget.isDead || player.ticksExisted - this.rotateTick > 1) {
             return null;
         }
-        return Rots.aim(Rots.toEntity(this.rotateTarget), 18.0);
+        return RotationUtils.toEntityFixed(this.rotateTarget, yaw, pitch);
     }
 
     private void attack(Entity target) {

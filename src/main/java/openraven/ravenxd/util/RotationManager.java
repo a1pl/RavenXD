@@ -6,10 +6,12 @@ import openraven.ravenxd.hook.Hooks;
 import openraven.ravenxd.module.Module;
 import openraven.ravenxd.module.ModuleManager;
 import openraven.ravenxd.module.SettingsModule;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.util.MathHelper;
 
-public final class RotationManager implements IMinecraft {
+public final class RotationManager {
+    private static final Minecraft mc = Minecraft.getMinecraft();
 
     public static RotationSource source;
     public static boolean rotating;
@@ -75,18 +77,15 @@ public final class RotationManager implements IMinecraft {
         return rotations;
     }
 
-    // use rots
     public static void set(float[] rotations) {
-        float[] r = Rots.apply(rotations, lastYaw, lastPitch, source != null && source.movementFix);
-        serverYaw = r[0];
-        serverPitch = r[1];
+        serverYaw = rotations[0];
+        serverPitch = rotations[1];
     }
 
     public static void setLast(float yaw, float pitch, float lastReportedPitch) {
         lastYaw = yaw;
         lastPitch = pitch;
         previousPitch = lastReportedPitch;
-        Rots.finishTick(yaw, pitch);
         playerYawAtSend = mc.thePlayer.rotationYaw;
     }
 
