@@ -28,3 +28,8 @@ hs_err_pid*
 Thumbs.db
 desktop.ini
 .DS_Store
+
+# Lunar / Meowtils port build output and the third-party Meowtils jar it compiles against
+lunar/work/
+lunar/dist/
+lunar/libs/*.jar
